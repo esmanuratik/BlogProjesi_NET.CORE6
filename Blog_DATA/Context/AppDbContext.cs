@@ -25,7 +25,7 @@ namespace Blog_DATA.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //builder.ApplyConfiguration(new ArticleMap()); 
-            //bu şekilde de okutabilirsin datbase de fakat bu clean code mantığına aykırı çünkü hepsi için yani bütün tanımladığın mapping class larına uygulaman gerekiyor fakat Assembly ile yazdığımızda bunu katmana müdahale ettiği için otomatik olarak hepsini içine alıyor olacak. 
+            //bu şekilde de okutabilirsin database de fakat bu clean code mantığına aykırı çünkü hepsi için yani bütün tanımladığın mapping class larına uygulaman gerekiyor fakat Assembly ile yazdığımızda bunu katmana müdahale ettiği için otomatik olarak hepsini içine alıyor olacak. 
 
             //builder.Entity<Article>().Property(x=>x.Title).HasMaxLength(150);
             //bu şekilde de yine aynı şekilde değişikliği yapabilirsin fakat yine clean code mantığına aykırı olacaktır.Bu yüzden de Map Class ların da tanımlamak doğru olacaktır.Ancak zorunlu durumlarda bu şekilide tanımlamak uygun olacaktır.

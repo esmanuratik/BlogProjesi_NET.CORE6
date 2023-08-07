@@ -1,4 +1,5 @@
 using Blog_DATA.Context;
+using Blog_DATA.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Blog_WEB
@@ -9,9 +10,11 @@ namespace Blog_WEB
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.LoadDataLayerExtension(builder.Configuration);//DependencyInjection için yazdýk.
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            
 
             var app = builder.Build();
 
