@@ -15,7 +15,7 @@ namespace Blog_WEB
             builder.Services.LoadServiceLayerExtension();//configuration kullanmadýðým için yazmadým.
 
             // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
             
 
             var app = builder.Build();
@@ -35,9 +35,20 @@ namespace Blog_WEB
 
             app.UseAuthorization();
 
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+            //Burada program çalýþtýðýnda Controller olarak HomeController ve action olarak da Indexin çalýþacaðýný söylüyor. id si ise alýnadabilir alýnmayadabilir.
+            //app.MapControllerRoute(
+            //    name: "default",
+            //    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapAreaControllerRoute(
+                   name:"Admin",
+                   areaName:"Admin",
+                  pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
+                    );
+                endpoints.MapDefaultControllerRoute();//VErdiðim alaný Admin ilr çaðýracaðým fakat çaðýröazsam default olarak gelsin diye bunu da ekledim.
+            });
 
             app.Run();
         }
