@@ -47,7 +47,7 @@ namespace Blog_WEB
                    areaName:"Admin",
                   pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
                     );
-                endpoints.MapDefaultControllerRoute();//VErdiðim alaný Admin ilr çaðýracaðým fakat çaðýröazsam default olarak gelsin diye bunu da ekledim.
+                endpoints.MapDefaultControllerRoute();//Verdiðim alaný Admin ilr çaðýracaðým fakat çaðýröazsam default olarak gelsin diye bunu da ekledim.
             });
 
             app.Run();

@@ -1,5 +1,7 @@
 ﻿@*@using Blog_ENTİTY.Entities bunu buradan alıp viewimporta ekledik direkt olarak tanıması için view olarak import edebilmesi adına viewimporta koyduk*@
-@model List<Article>
+
+@model List<ArticlesViiewModel>
+
 <h1>Default Area İçerisindesiniz.</h1>
 
 @{
@@ -17,5 +19,7 @@
    <br />
    <h3>@article.Content</h3>
    <br />
+    <h3>@article.CreatedBy</h3>
+    <br />
 
 }

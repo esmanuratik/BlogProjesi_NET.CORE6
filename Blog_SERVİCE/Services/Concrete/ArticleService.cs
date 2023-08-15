@@ -1,5 +1,7 @@
-﻿using Blog_DATA.UnitOfWorks;
+﻿using AutoMapper;
+using Blog_DATA.UnitOfWorks;
 using Blog_ENTİTY.Entities;
+using Blog_ENTİTY.ViewModels.Articles;
 using Blog_SERVİCE.Services.Abstract;
 using System;
 using System.Collections.Generic;
@@ -16,13 +18,20 @@ namespace Blog_SERVİCE.Services.Concrete
         //burada repositorylere idrek olarak erişmeyeceğiz.Erişmeyeceğimiz için de hata alıp alamadığımız bilemeyeceğimiz için  UnitOfWork yapısını kullanmıştık buarda da yine aynı şekilde CTOR da unitofwork yapısını kullancağım. 
 
         private readonly IUnitOfWork unitOfWork;
-        public ArticleService(IUnitOfWork unitOfWork)
+        private readonly IMapper mapper;
+
+        public ArticleService(IUnitOfWork unitOfWork,IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
-        }
-        public async Task<List<Article>> GetAllArticlesAsync()
+            this.mapper = mapper;
+        }      
+
+        public async Task<List<ArticlesViiewModel>> GetAllArticlesAsync()
         {
-            return await unitOfWork.GetRepository<Article>().GetAllAsync();
+            var articles = await unitOfWork.GetRepository<ArticlesViewModel>().GetAllAsync();
+            var map = mapper.Map<List<ArticlesViiewModel>>(articles);
+
+            return map; 
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Blog_ENTİTY.Entities;
+using Blog_ENTİTY.ViewModels.Articles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Blog_SERVİCE.Services.Abstract
 {
     public interface IArticleService
     {
-        Task<List<Article>> GetAllArticlesAsync();//async işlem yaptığım için task kullandık ve getallarticleasync metodu oluşturduk.
+        Task<List<ArticlesViiewModel>> GetAllArticlesAsync();//async işlem yaptığım için task kullandık ve getallarticleasync metodu oluşturduk.
     }
 }

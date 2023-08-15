@@ -9,12 +9,13 @@ using System.Threading.Tasks;
 
 namespace Blog_DATA.Mappings
 {
-    public class ArticleMap : IEntityTypeConfiguration<Article>
+    public class ArticleMap : IEntityTypeConfiguration<ArticlesViewModel>
     {
-        public void Configure(EntityTypeBuilder<Article> builder) //bunu AppDbContext de override edeceğiz ikisi de database i etkiliyor onun için oraya yazdık.
+        public void Configure(EntityTypeBuilder<ArticlesViewModel> builder) //bunu AppDbContext de override edeceğiz ikisi de database i etkiliyor onun için oraya yazdık.
         {
             builder.Property(x=>x.Title).HasMaxLength(150);
-            builder.HasData(new Article
+
+            builder.HasData(new ArticlesViewModel
             {
                 Id = Guid.NewGuid(),
                 Title = "Asp.Net Core Deneme Makalesi",
@@ -26,7 +27,7 @@ namespace Blog_DATA.Mappings
                 CreatedDate = DateTime.Now,
                 IsDeleted = false
             },
-            new Article
+            new ArticlesViewModel
             {
                 Id = Guid.NewGuid(),
                 Title = "Visual Studio Deneme Makalesi",

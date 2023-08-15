@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Blog_ENTİTY.Entities
 {//MAKALE   
-    public class Article: EntityBase
+    public class ArticlesViewModel: EntityBase
     {
         public string Title { get; set; }   
         public string Content { get; set; }

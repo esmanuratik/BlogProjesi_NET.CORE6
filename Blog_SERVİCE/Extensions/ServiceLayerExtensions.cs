@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,9 +18,13 @@ namespace Blog_SERVİCE.Extensions
     public static class ServiceLayerExtensions
     {
         
-        public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection services)
+        public static IServiceCollection LoadServiceLayerExtension(this IServiceCollection services)//program.cs de bunu belirtmelisin.
         {
-            services.AddScoped<IArticleService,ArticleService>();//bunu program.cs de de yazmak zorundasın.
+            var assembly = Assembly.GetExecutingAssembly();//Assembly bu sınıfın çağırıldığı AutoMapper ın eklediği katmanın ismi
+            services.AddAutoMapper(assembly);
+
+            services.AddScoped<IArticleService, ArticleService>(); //ArticleService IArticleServiceden türetildi bunu belirtiyorum.
+
             return services;
         }
 
