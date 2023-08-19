@@ -1,5 +1,6 @@
 ﻿using Blog_DATA.Mappings;
 using Blog_ENTİTY.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Blog_DATA.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser, AppRole,Guid,AppUserClaim,AppUserRole,AppUserLogin,AppRoleClaim,AppUserToken>//Bu ksımda sırası ile yazmak önemli ! Guid=Key olarak verdiğimiz yapı.Idedntity de geçerli olmasını istediğimiz ttüm yapımızı burada kurmuş olduk.
     {
         protected AppDbContext()//herhangi bir ihtimale karşı oluşturuldu
         {
@@ -24,6 +25,9 @@ namespace Blog_DATA.Context
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            base.OnModelCreating(builder);//Identity yapısını kullandığımda bunu burada bu şekilde belirtiyorum çünkü aksi takdırde hata alabilirm.
+
+
             //builder.ApplyConfiguration(new ArticleMap()); 
             //bu şekilde de okutabilirsin database de fakat bu clean code mantığına aykırı çünkü hepsi için yani bütün tanımladığın mapping class larına uygulaman gerekiyor fakat Assembly ile yazdığımızda bunu katmana müdahale ettiği için otomatik olarak hepsini içine alıyor olacak. 
 
