@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace Blog_DATA.Mappings
 {
-    public class ArticleMap : IEntityTypeConfiguration<ArticlesViewModel>
+    public class ArticleMap : IEntityTypeConfiguration<Article>
     {
-        public void Configure(EntityTypeBuilder<ArticlesViewModel> builder) //bunu AppDbContext de override edeceğiz ikisi de database i etkiliyor onun için oraya yazdık.
+        public void Configure(EntityTypeBuilder<Article> builder) //bunu AppDbContext de override edeceğiz ikisi de database i etkiliyor onun için oraya yazdık.
         {
             builder.Property(x=>x.Title).HasMaxLength(150);
 
-            builder.HasData(new ArticlesViewModel
+            builder.HasData(new Article
             {
                 Id = Guid.NewGuid(),
                 Title = "Asp.Net Core Deneme Makalesi",
@@ -25,23 +25,27 @@ namespace Blog_DATA.Mappings
                 ImageId = Guid.Parse("469D0705-F843-42DB-8E28-2EAE75AC1270"),
                 CreatedBy = "Admin Test",
                 CreatedDate = DateTime.Now,
-                IsDeleted = false
+                IsDeleted = false,
+                UserId = Guid.Parse("CE819932-AA76-4DFD-BC26-D450CC43644D")
+
             },
-            new ArticlesViewModel
+            new Article
             {
                 Id = Guid.NewGuid(),
                 Title = "Visual Studio Deneme Makalesi",
                 Content = "Visual Studio Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır. Lipsum, oluşturulacak şablon ve taslaklarda içerik yerine geçerek yazı bloğunu doldurmak için kullanılır.",
-                ViewCount = 15,              
-                CategoryId =Guid.Parse("A984D2EA-6128-44F8-96F8-4AEC73217AFF"),
+                ViewCount = 15,
+                CategoryId = Guid.Parse("A984D2EA-6128-44F8-96F8-4AEC73217AFF"),
                 ImageId = Guid.Parse("214F9F14-7C40-44D1-8BD9-0648A787B77B"),
                 CreatedBy = "Visual Studio Admin Test",
                 CreatedDate = DateTime.Now,
-                IsDeleted = false
+                IsDeleted = false,
+                UserId = Guid.Parse("89840E40-5233-4268-A713-01833FBAAEF7")
+
             }
 
-            
-            );
+
+            ) ;
         }
     }
 }

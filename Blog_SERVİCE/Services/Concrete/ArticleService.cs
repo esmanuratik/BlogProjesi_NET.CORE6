@@ -28,7 +28,7 @@ namespace Blog_SERVİCE.Services.Concrete
 
         public async Task<List<ArticlesViiewModel>> GetAllArticlesAsync()
         {
-            var articles = await unitOfWork.GetRepository<ArticlesViewModel>().GetAllAsync();
+            var articles = await unitOfWork.GetRepository<Article>().GetAllAsync();
             var map = mapper.Map<List<ArticlesViiewModel>>(articles);
 
             return map; 

@@ -6,8 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Blog_ENTİTY.Entities
-{//MAKALE   
-    public class ArticlesViewModel: EntityBase
+{      //MAKALE   
+    public class Article: EntityBase
     {
         public string Title { get; set; }   
         public string Content { get; set; }
@@ -16,7 +16,9 @@ namespace Blog_ENTİTY.Entities
         //Diğer tablolarla bağlantı kurmak için
         public Guid CategoryId { get; set; }
         public Category Category { get; set; }
-        public Guid ImageId { get; set; }   
+        public Guid? ImageId { get; set; }   //ImageId nin null gelebilme ihtimali olduğu için.
         public Image Image { get; set; }
+        public Guid UserId { get; set; }
+        public AppUser User { get; set; }
     }
 }
