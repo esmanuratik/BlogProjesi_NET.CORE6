@@ -47,8 +47,10 @@ namespace Blog_DATA.Mappings
             // Each User can have many entries in the UserRole join table
             builder.HasMany<AppUserRole>().WithOne().HasForeignKey(ur => ur.UserId).IsRequired();
 
+
+
             //Yeni User oluşturuyorum.
-            var superadmin = new AppUser
+                 var superadmin = new AppUser
             {
                 Id = Guid.Parse("CE819932-AA76-4DFD-BC26-D450CC43644D"),
                 UserName = "superadmin@gmail.com",
@@ -74,7 +76,7 @@ namespace Blog_DATA.Mappings
                 NormalizedUserName = "ADMIN@GMAİL.COM",
                 Email = "admin@gmail.com",
                 NormalizedEmail = "ADMIN@GMAİL.COM",
-                PhoneNumber = "+905674657235",
+                PhoneNumber = "+905676757235",
                 FirstName = "Admin",
                 LastName = "User",
                 PhoneNumberConfirmed = false,

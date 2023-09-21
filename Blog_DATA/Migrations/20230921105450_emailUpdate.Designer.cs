@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Blog_DATA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230828142457_Init")]
-    partial class Init
+    [Migration("20230921105450_emailUpdate")]
+    partial class emailUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,21 +55,21 @@ namespace Blog_DATA.Migrations
                         new
                         {
                             Id = new Guid("27b7d024-e617-48c4-b738-f6dac56f8f37"),
-                            ConcurrencyStamp = "2a395d08-4943-4c1a-96bc-41161ba378cb",
+                            ConcurrencyStamp = "630e216d-2079-482d-ace4-867df2ae6d38",
                             Name = "SuperAdmin",
                             NormalizedName = "SUPERADMİN"
                         },
                         new
                         {
                             Id = new Guid("d026549b-b273-4b41-8d4e-7f9894baa63f"),
-                            ConcurrencyStamp = "2e20d5fa-d9a2-4365-a115-1ae9a7a3d52c",
+                            ConcurrencyStamp = "17483f37-d72b-4d4e-9ff5-c29ca8be8faa",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
                             Id = new Guid("3da0067a-2a84-4841-a0db-228c558ed59d"),
-                            ConcurrencyStamp = "55c1ef12-ebc2-4cec-9675-e376b46e24c4",
+                            ConcurrencyStamp = "a5f44d4d-c1e4-4a19-b4be-203128cb07b8",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -182,7 +182,7 @@ namespace Blog_DATA.Migrations
                         {
                             Id = new Guid("ce819932-aa76-4dfd-bc26-d450cc43644d"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b08b59bf-1eae-491a-a5dd-929986c73e96",
+                            ConcurrencyStamp = "d571b45b-779d-4101-b6e3-9993b448a693",
                             Email = "superadmin@gmail.com",
                             EmailConfirmed = true,
                             FirstName = "Esmanur",
@@ -191,10 +191,10 @@ namespace Blog_DATA.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "SUPERADMIN@GMAİL.COM",
                             NormalizedUserName = "SUPERADMIN@GMAİL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHCschbUSVBLyGds6WD53el8G0JTdY01ol+4chk09O2e/Q4vqoDAhiLZgP7LrgFuQQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKrJMLbVZEcbTdaVjcho+17Zxb+sAidiQ95m8dGflF/zt2nd1Cz2iassbUAwCG7pZQ==",
                             PhoneNumber = "+905674657235",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "eddb0530-3131-454a-a849-9746954b7bc0",
+                            SecurityStamp = "5a7dee66-de80-4345-99b7-33930abd2266",
                             TwoFactorEnabled = false,
                             UserName = "superadmin@gmail.com"
                         },
@@ -202,7 +202,7 @@ namespace Blog_DATA.Migrations
                         {
                             Id = new Guid("89840e40-5233-4268-a713-01833fbaaef7"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8e92b3d2-d878-4a1e-b3cb-e49fe7020553",
+                            ConcurrencyStamp = "3c586680-2209-445e-893e-9e08777d3871",
                             Email = "admin@gmail.com",
                             EmailConfirmed = false,
                             FirstName = "Admin",
@@ -211,10 +211,10 @@ namespace Blog_DATA.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@GMAİL.COM",
                             NormalizedUserName = "ADMIN@GMAİL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAnwv8My0lSFI99bA+L9kT7jBApU9vCOavtqjLtJUcIbY7q1HnqFi6RyudIpsoXP9g==",
-                            PhoneNumber = "+905674657235",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEbr6gK8Re1WDHA1+PsnL+3hzhasYZBcy3pDRiq5JXecC5DafsOrZNX63cHzzy6uAA==",
+                            PhoneNumber = "+905676757235",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "8ee666e0-0a4a-4c99-abde-bb259f6e2d26",
+                            SecurityStamp = "83f518ca-9f00-44e4-b55c-3064702304cc",
                             TwoFactorEnabled = false,
                             UserName = "admin@gmail.com"
                         });
@@ -290,7 +290,7 @@ namespace Blog_DATA.Migrations
                         new
                         {
                             UserId = new Guid("89840e40-5233-4268-a713-01833fbaaef7"),
-                            RoleId = new Guid("3da0067a-2a84-4841-a0db-228c558ed59d")
+                            RoleId = new Guid("d026549b-b273-4b41-8d4e-7f9894baa63f")
                         });
                 });
 
@@ -375,11 +375,11 @@ namespace Blog_DATA.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("1b023d71-08b6-42a5-abe8-00adac0fe714"),
+                            Id = new Guid("b184216a-d258-4827-aa08-79beaa84f1f5"),
                             CategoryId = new Guid("f312c378-f16b-41f2-8186-e3703ddcd524"),
                             Content = "Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır. Lipsum, oluşturulacak şablon ve taslaklarda içerik yerine geçerek yazı bloğunu doldurmak için kullanılır.",
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 8, 28, 17, 24, 57, 703, DateTimeKind.Local).AddTicks(3077),
+                            CreatedDate = new DateTime(2023, 9, 21, 13, 54, 50, 206, DateTimeKind.Local).AddTicks(9420),
                             ImageId = new Guid("469d0705-f843-42db-8e28-2eae75ac1270"),
                             IsDeleted = false,
                             Title = "Asp.Net Core Deneme Makalesi",
@@ -388,11 +388,11 @@ namespace Blog_DATA.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f338a641-b87c-4637-9df2-0169b3aa3c62"),
+                            Id = new Guid("851c50a7-cbbd-4952-8602-0868302ba8e0"),
                             CategoryId = new Guid("a984d2ea-6128-44f8-96f8-4aec73217aff"),
                             Content = "Visual Studio Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır. Lipsum, oluşturulacak şablon ve taslaklarda içerik yerine geçerek yazı bloğunu doldurmak için kullanılır.",
                             CreatedBy = "Visual Studio Admin Test",
-                            CreatedDate = new DateTime(2023, 8, 28, 17, 24, 57, 703, DateTimeKind.Local).AddTicks(3082),
+                            CreatedDate = new DateTime(2023, 9, 21, 13, 54, 50, 206, DateTimeKind.Local).AddTicks(9425),
                             ImageId = new Guid("214f9f14-7c40-44d1-8bd9-0648a787b77b"),
                             IsDeleted = false,
                             Title = "Visual Studio Deneme Makalesi",
@@ -442,7 +442,7 @@ namespace Blog_DATA.Migrations
                         {
                             Id = new Guid("f312c378-f16b-41f2-8186-e3703ddcd524"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 8, 28, 17, 24, 57, 703, DateTimeKind.Local).AddTicks(3284),
+                            CreatedDate = new DateTime(2023, 9, 21, 13, 54, 50, 206, DateTimeKind.Local).AddTicks(9593),
                             IsDeleted = false,
                             Name = "Asp.Net Core"
                         },
@@ -450,7 +450,7 @@ namespace Blog_DATA.Migrations
                         {
                             Id = new Guid("a984d2ea-6128-44f8-96f8-4aec73217aff"),
                             CreatedBy = "Visual Studio Admin Test",
-                            CreatedDate = new DateTime(2023, 8, 28, 17, 24, 57, 703, DateTimeKind.Local).AddTicks(3287),
+                            CreatedDate = new DateTime(2023, 9, 21, 13, 54, 50, 206, DateTimeKind.Local).AddTicks(9596),
                             IsDeleted = false,
                             Name = "Visual Studio"
                         });
@@ -501,7 +501,7 @@ namespace Blog_DATA.Migrations
                         {
                             Id = new Guid("469d0705-f843-42db-8e28-2eae75ac1270"),
                             CreatedBy = "Admin Test",
-                            CreatedDate = new DateTime(2023, 8, 28, 17, 24, 57, 703, DateTimeKind.Local).AddTicks(3362),
+                            CreatedDate = new DateTime(2023, 9, 21, 13, 54, 50, 206, DateTimeKind.Local).AddTicks(9686),
                             FileName = "Images/TestImage",
                             FileType = "jpg",
                             IsDeleted = false
@@ -510,7 +510,7 @@ namespace Blog_DATA.Migrations
                         {
                             Id = new Guid("214f9f14-7c40-44d1-8bd9-0648a787b77b"),
                             CreatedBy = "Visual Studio Admin Test",
-                            CreatedDate = new DateTime(2023, 8, 28, 17, 24, 57, 703, DateTimeKind.Local).AddTicks(3365),
+                            CreatedDate = new DateTime(2023, 9, 21, 13, 54, 50, 206, DateTimeKind.Local).AddTicks(9689),
                             FileName = "Visual StudioImages/TestImage",
                             FileType = "png",
                             IsDeleted = false

@@ -1,9 +1,11 @@
 ﻿using Blog_SERVİCE.Services.Abstract;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog_WEB.Areas.Admin.Controllers
 {
     [Area("Admin")]     //Web katmanında iki tane homecontroler var hangisinin olduğunu belli etmeliyim bu şekilde yoksa karışacaktır.
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IArticleService articleService;

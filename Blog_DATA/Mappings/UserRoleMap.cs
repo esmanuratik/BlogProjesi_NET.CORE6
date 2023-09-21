@@ -28,7 +28,7 @@ namespace Blog_DATA.Mappings
             new AppUserRole
             {
                 UserId = Guid.Parse("89840E40-5233-4268-A713-01833FBAAEF7"),//UserMap deki admin ıd si
-                RoleId = Guid.Parse("3DA0067A-2A84-4841-A0DB-228C558ED59D"),//RoleMApdeki adminrole ıd si
+                RoleId = Guid.Parse("D026549B-B273-4B41-8D4E-7F9894BAA63F"),//RoleMApdeki adminrole ıd si
             });
         }
     }

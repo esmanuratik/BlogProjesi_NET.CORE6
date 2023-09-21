@@ -45,7 +45,7 @@ namespace Blog_WEB
                 };
                 config.SlidingExpiration = true;
                 config.ExpireTimeSpan= TimeSpan.FromDays(7);//Cookie de ne kadar süre ile kalacaðýný göstr.
-                config.AccessDeniedPath = new PathString("/Admin/Auth/AccessDonied");//Yetkisiz bir giriþ yapýldýðýnýda bu sayfaya eiþimizniz yoktur þeklide bir sayfa ile karþýlaþýlmasýný söyler.
+                config.AccessDeniedPath = new PathString("/Admin/Auth/AccessDonied");//Yetkisiz bir giriþ yapýldýðýnýda bu sayfaya eriþimizniz yoktur þeklide bir sayfa ile karþýlaþýlmasýný söyler.
 
 
             });
