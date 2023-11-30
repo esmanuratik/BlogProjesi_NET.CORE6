@@ -15,7 +15,7 @@ namespace Blog_DATA.Extensions
 {
     public static class DataLayerExtensions
     {
-        //DependencyInjection kullanmak için bunhu yazdık .IServiceCollection arayüzünü kullandık ve LoadDataLayerExtension ile iki parametre vererek ki iki tane parametre alır Repository ve Irepositor bağlamış olduk.
+        //Dependency Injection kullanmak için bunu yazdık .IServiceCollection arayüzünü kullandık ve LoadDataLayerExtension ile iki parametre vererek ki iki tane parametre alır Repository ve IRepository bağlamış olduk.
         public static IServiceCollection LoadDataLayerExtension(this IServiceCollection services,IConfiguration config)
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));

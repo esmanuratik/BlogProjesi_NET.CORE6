@@ -15,7 +15,7 @@ namespace Blog_SERVİCE.Services.Concrete
     {
 
 
-        //burada repositorylere idrek olarak erişmeyeceğiz.Erişmeyeceğimiz için de hata alıp alamadığımız bilemeyeceğimiz için  UnitOfWork yapısını kullanmıştık buarda da yine aynı şekilde CTOR da unitofwork yapısını kullancağım. 
+        //burada repositorylere direk olarak erişmeyeceğiz.Erişmeyeceğimiz için de hata alıp alamadığımız bilemeyeceğimiz için  UnitOfWork yapısını kullanmıştık burada da yine aynı şekilde CTOR da unitofwork yapısını kullancağım. 
 
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
@@ -26,10 +26,10 @@ namespace Blog_SERVİCE.Services.Concrete
             this.mapper = mapper;
         }      
 
-        public async Task<List<ArticlesViiewModel>> GetAllArticlesAsync()
+        public async Task<List<ArticlesViewModel>> GetAllArticlesAsync()
         {
             var articles = await unitOfWork.GetRepository<Article>().GetAllAsync();
-            var map = mapper.Map<List<ArticlesViiewModel>>(articles);
+            var map = mapper.Map<List<ArticlesViewModel>>(articles);
 
             return map; 
         }

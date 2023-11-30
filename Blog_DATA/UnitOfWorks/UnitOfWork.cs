@@ -11,14 +11,14 @@ namespace Blog_DATA.UnitOfWorks
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly AppDbContext dbContext;//databse işlemleri ile uğraşacağımız için DbContext çağırmalıyız.
+        private readonly AppDbContext dbContext;//database işlemleri ile uğraşacağımız için DbContext çağırmalıyız.
 
         public UnitOfWork(AppDbContext dbContext)
         {
             this.dbContext = dbContext;
         }
 
-        public async ValueTask DisposeAsync()//IAsyncDısposible dan kalıttığımız için bu metot geldi.
+        public async ValueTask DisposeAsync()//IAsyncDisposible dan kalıttığımız için bu metot geldi.
         {
             await dbContext.DisposeAsync();
         }
@@ -33,7 +33,7 @@ namespace Blog_DATA.UnitOfWorks
             return await dbContext.SaveChangesAsync();
         }
 
-        IRepository<T> IUnitOfWork.GetRepository<T>()//ileride service lerle işlem yaptığımızda reopository<T> sayesinde istediğimiz entity çağırıp işlem yyapabileceğiz.
+        IRepository<T> IUnitOfWork.GetRepository<T>()//ileride service lerle işlem yaptığımızda repository<T> sayesinde istediğimiz entity çağırıp işlem yapabileceğiz.
         {
            return new Repository<T>(dbContext);
         }

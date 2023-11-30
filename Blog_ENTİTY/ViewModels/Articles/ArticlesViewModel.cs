@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blog_ENTİTY.ViewModels.Articles
 {
-    public class ArticlesViiewModel
+    public class ArticlesViewModel
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

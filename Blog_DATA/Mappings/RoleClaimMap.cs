@@ -19,4 +19,6 @@ namespace Blog_DATA.Mappings
             builder.ToTable("AspNetRoleClaims");
         }
     }
+
+
 }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Blog_DATA.Migrations
 {
-    public partial class UserCrated : Migration
+    public partial class Inıt : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -90,7 +90,7 @@ namespace Blog_DATA.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    ImageId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -113,8 +113,7 @@ namespace Blog_DATA.Migrations
                         name: "FK_AspNetUsers_Images_ImageId",
                         column: x => x.ImageId,
                         principalTable: "Images",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -248,9 +247,9 @@ namespace Blog_DATA.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("27b7d024-e617-48c4-b738-f6dac56f8f37"), "33ad36ea-9fe5-415c-96fd-f2fc18304d0c", "SuperAdmin", "SUPERADMİN" },
-                    { new Guid("3da0067a-2a84-4841-a0db-228c558ed59d"), "8fd74f2b-a408-4b09-9f20-d7c81e8da7e9", "User", "USER" },
-                    { new Guid("d026549b-b273-4b41-8d4e-7f9894baa63f"), "34e1e2fc-b128-4db2-9ed7-126b312069f3", "Admin", "ADMIN" }
+                    { new Guid("27b7d024-e617-48c4-b738-f6dac56f8f37"), "715f0ed4-0241-4893-83ea-a000d268857b", "SuperAdmin", "SUPERADMİN" },
+                    { new Guid("3da0067a-2a84-4841-a0db-228c558ed59d"), "5a3054f6-d796-40af-ad54-7c6ddad1848f", "User", "USER" },
+                    { new Guid("d026549b-b273-4b41-8d4e-7f9894baa63f"), "ef04862f-aa06-4124-b5da-9e62f3b9d8ca", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(
@@ -258,8 +257,8 @@ namespace Blog_DATA.Migrations
                 columns: new[] { "Id", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "IsDeleted", "ModifiedBy", "ModifiedDate", "Name" },
                 values: new object[,]
                 {
-                    { new Guid("a984d2ea-6128-44f8-96f8-4aec73217aff"), "Visual Studio Admin Test", new DateTime(2023, 9, 20, 16, 59, 32, 727, DateTimeKind.Local).AddTicks(338), null, null, false, null, null, "Visual Studio" },
-                    { new Guid("f312c378-f16b-41f2-8186-e3703ddcd524"), "Admin Test", new DateTime(2023, 9, 20, 16, 59, 32, 727, DateTimeKind.Local).AddTicks(332), null, null, false, null, null, "Asp.Net Core" }
+                    { new Guid("a984d2ea-6128-44f8-96f8-4aec73217aff"), "Visual Studio Admin Test", new DateTime(2023, 10, 8, 16, 45, 12, 494, DateTimeKind.Local).AddTicks(1481), null, null, false, null, null, "Visual Studio" },
+                    { new Guid("f312c378-f16b-41f2-8186-e3703ddcd524"), "Admin Test", new DateTime(2023, 10, 8, 16, 45, 12, 494, DateTimeKind.Local).AddTicks(1478), null, null, false, null, null, "Asp.Net Core" }
                 });
 
             migrationBuilder.InsertData(
@@ -267,27 +266,27 @@ namespace Blog_DATA.Migrations
                 columns: new[] { "Id", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "FileName", "FileType", "IsDeleted", "ModifiedBy", "ModifiedDate" },
                 values: new object[,]
                 {
-                    { new Guid("214f9f14-7c40-44d1-8bd9-0648a787b77b"), "Visual Studio Admin Test", new DateTime(2023, 9, 20, 16, 59, 32, 727, DateTimeKind.Local).AddTicks(507), null, null, "Visual StudioImages/TestImage", "png", false, null, null },
-                    { new Guid("469d0705-f843-42db-8e28-2eae75ac1270"), "Admin Test", new DateTime(2023, 9, 20, 16, 59, 32, 727, DateTimeKind.Local).AddTicks(501), null, null, "Images/TestImage", "jpg", false, null, null }
+                    { new Guid("214f9f14-7c40-44d1-8bd9-0648a787b77b"), "Visual Studio Admin Test", new DateTime(2023, 10, 8, 16, 45, 12, 494, DateTimeKind.Local).AddTicks(1572), null, null, "Visual StudioImages/TestImage", "png", false, null, null },
+                    { new Guid("469d0705-f843-42db-8e28-2eae75ac1270"), "Admin Test", new DateTime(2023, 10, 8, 16, 45, 12, 494, DateTimeKind.Local).AddTicks(1565), null, null, "Images/TestImage", "jpg", false, null, null }
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "ImageId", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("89840e40-5233-4268-a713-01833fbaaef7"), 0, "d100f185-675f-4832-ba0b-0d33eee6f683", "admin@gmail.com", false, "Admin", new Guid("214f9f14-7c40-44d1-8bd9-0648a787b77b"), "User", false, null, "ADMIN@GMAİL.COM", "ADMIN@GMAİL.COM", "AQAAAAEAACcQAAAAEEunZC9QG86tVgSdMOg6795ABos+McFqwVFtyJ7rakFfgj1gMGGvWplCOs6Fa1De4w==", "+905676757235", false, "952bed79-5b48-44a3-abd0-456348dd9873", false, "admin@gmail.com" });
+                values: new object[] { new Guid("89840e40-5233-4268-a713-01833fbaaef7"), 0, "2b68e4dc-1911-4061-9b34-54010f97cdd7", "admin@gmail.com", false, "Admin", new Guid("469d0705-f843-42db-8e28-2eae75ac1270"), "User", false, null, "ADMIN@GMAİL.COM", "ADMIN@GMAİL.COM", "AQAAAAEAACcQAAAAEC+GC6rOjOaIrWuiOQ95eZ4r4kI4IA8nsEGtJ5HOJs0F6C4CREIDw43bRDFbAVPq5Q==", "+905676757235", false, "713feb59-f6d7-43a0-9c9e-cd8e8a8e3f0e", false, "admin@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "ImageId", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("ce819932-aa76-4dfd-bc26-d450cc43644d"), 0, "2ace05e5-4973-48d3-a0ab-4fd5ee2233f6", "superadmin@gmail.com", true, "Esmanur", new Guid("469d0705-f843-42db-8e28-2eae75ac1270"), "Atik", false, null, "SUPERADMIN@GMAİL.COM", "SUPERADMIN@GMAİL.COM", "AQAAAAEAACcQAAAAEN2RSr6bl9t7GCga5T9M6TYD547URI3RVJZzV8XOtfakTSi5EZMv+fRn9hqJOhvaQw==", "+905674657235", true, "f125c646-3fc6-431e-98b2-e0d00c0bee8a", false, "superadmin@gmail.com" });
+                values: new object[] { new Guid("ce819932-aa76-4dfd-bc26-d450cc43644d"), 0, "3264dac5-b4c1-43f7-b6c1-f0337e370c4f", "superadmin@gmail.com", true, "Esmanur", new Guid("469d0705-f843-42db-8e28-2eae75ac1270"), "Atik", false, null, "SUPERADMIN@GMAİL.COM", "SUPERADMIN@GMAİL.COM", "AQAAAAEAACcQAAAAEM5KNGaL7eR5gch8ArhxSqJFto5KFwjDYeVk+S3JAKLpzoimrZ1UttG2d0zoR8fvgg==", "+905674657235", true, "7faf7650-cc01-4c6f-b908-83b35a6d0a2d", false, "superadmin@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "Articles",
                 columns: new[] { "Id", "CategoryId", "Content", "CreatedBy", "CreatedDate", "DeletedBy", "DeletedDate", "ImageId", "IsDeleted", "ModifiedBy", "ModifiedDate", "Title", "UserId", "ViewCount" },
                 values: new object[,]
                 {
-                    { new Guid("d8f44aaf-c2a0-4567-a6bf-cc8d185d8a1b"), new Guid("f312c378-f16b-41f2-8186-e3703ddcd524"), "Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır. Lipsum, oluşturulacak şablon ve taslaklarda içerik yerine geçerek yazı bloğunu doldurmak için kullanılır.", "Admin Test", new DateTime(2023, 9, 20, 16, 59, 32, 727, DateTimeKind.Local).AddTicks(15), null, null, new Guid("469d0705-f843-42db-8e28-2eae75ac1270"), false, null, null, "Asp.Net Core Deneme Makalesi", new Guid("ce819932-aa76-4dfd-bc26-d450cc43644d"), 15 },
-                    { new Guid("dd26bfc4-3485-4492-a4f0-369ad22fa6bd"), new Guid("a984d2ea-6128-44f8-96f8-4aec73217aff"), "Visual Studio Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır. Lipsum, oluşturulacak şablon ve taslaklarda içerik yerine geçerek yazı bloğunu doldurmak için kullanılır.", "Visual Studio Admin Test", new DateTime(2023, 9, 20, 16, 59, 32, 727, DateTimeKind.Local).AddTicks(38), null, null, new Guid("214f9f14-7c40-44d1-8bd9-0648a787b77b"), false, null, null, "Visual Studio Deneme Makalesi", new Guid("89840e40-5233-4268-a713-01833fbaaef7"), 15 }
+                    { new Guid("01e10aa2-64dc-4a56-b603-b2257a87ced7"), new Guid("a984d2ea-6128-44f8-96f8-4aec73217aff"), "Visual Studio Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır. Lipsum, oluşturulacak şablon ve taslaklarda içerik yerine geçerek yazı bloğunu doldurmak için kullanılır.", "Visual Studio Admin Test", new DateTime(2023, 10, 8, 16, 45, 12, 494, DateTimeKind.Local).AddTicks(1280), null, null, new Guid("214f9f14-7c40-44d1-8bd9-0648a787b77b"), false, null, null, "Visual Studio Deneme Makalesi", new Guid("89840e40-5233-4268-a713-01833fbaaef7"), 15 },
+                    { new Guid("bb7b182c-9ca0-4601-910a-4cd95ec8049b"), new Guid("f312c378-f16b-41f2-8186-e3703ddcd524"), "Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır. Lipsum, oluşturulacak şablon ve taslaklarda içerik yerine geçerek yazı bloğunu doldurmak için kullanılır.", "Admin Test", new DateTime(2023, 10, 8, 16, 45, 12, 494, DateTimeKind.Local).AddTicks(1259), null, null, new Guid("469d0705-f843-42db-8e28-2eae75ac1270"), false, null, null, "Asp.Net Core Deneme Makalesi", new Guid("ce819932-aa76-4dfd-bc26-d450cc43644d"), 15 }
                 });
 
             migrationBuilder.InsertData(

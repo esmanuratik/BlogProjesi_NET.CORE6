@@ -14,13 +14,13 @@ namespace Blog_DATA.Mappings
         public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasData(new Category
-            {              
-                    Id = Guid.Parse("F312C378-F16B-41F2-8186-E3703DDCD524"),
-                    Name = "Asp.Net Core",
-                    CreatedBy = "Admin Test",
-                    CreatedDate = DateTime.Now,
-                    IsDeleted = false
-               
+            {
+                Id = Guid.Parse("F312C378-F16B-41F2-8186-E3703DDCD524"),
+                Name = "Asp.Net Core",
+                CreatedBy = "Admin Test",
+                CreatedDate = DateTime.Now,
+                IsDeleted = false
+
             },
             new Category
             {
@@ -33,5 +33,7 @@ namespace Blog_DATA.Mappings
 
         }
     }
+
+
 }
 

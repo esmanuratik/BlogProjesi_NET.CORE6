@@ -50,19 +50,21 @@ namespace Blog_DATA.Mappings
             },
             new AppRole
             {
-                Id=Guid.Parse("D026549B-B273-4B41-8D4E-7F9894BAA63F"),
-                Name="Admin",
-                NormalizedName="ADMIN",
-                ConcurrencyStamp=Guid.NewGuid().ToString()
+                Id = Guid.Parse("D026549B-B273-4B41-8D4E-7F9894BAA63F"),
+                Name = "Admin",
+                NormalizedName = "ADMIN",
+                ConcurrencyStamp = Guid.NewGuid().ToString()
             },
             new AppRole
             {
-                Id=Guid.Parse("3DA0067A-2A84-4841-A0DB-228C558ED59D"),
-                Name="User",
+                Id = Guid.Parse("3DA0067A-2A84-4841-A0DB-228C558ED59D"),
+                Name = "User",
                 NormalizedName = "USER",
-                ConcurrencyStamp=Guid.NewGuid().ToString()
+                ConcurrencyStamp = Guid.NewGuid().ToString()
 
             }); 
         }
     }
+
+   
 }

@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace Blog_DATA.Context
 {
-    public class AppDbContext : IdentityDbContext<AppUser, AppRole,Guid,AppUserClaim,AppUserRole,AppUserLogin,AppRoleClaim,AppUserToken>//Bu ksımda sırası ile yazmak önemli ! Guid=Key olarak verdiğimiz yapı.Idedntity de geçerli olmasını istediğimiz ttüm yapımızı burada kurmuş olduk.
+    public class AppDbContext : IdentityDbContext<AppUser, AppRole,Guid,AppUserClaim,AppUserRole,AppUserLogin,AppRoleClaim,AppUserToken>
+        //Bu kısımda sırası ile yazmak önemli ! Guid=Key olarak verdiğimiz yapı.Identity de geçerli olmasını istediğimiz tüm yapımızı burada kurmuş olduk.
     {
         protected AppDbContext()//herhangi bir ihtimale karşı oluşturuldu
         {
@@ -25,7 +26,7 @@ namespace Blog_DATA.Context
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);//Identity yapısını kullandığımda bunu burada bu şekilde belirtiyorum çünkü aksi takdırde hata alabilirm.
+            base.OnModelCreating(builder);//Identity yapısını kullandığımda bunu burada bu şekilde belirtiyorum çünkü aksi takdırde hata alabilirim.
 
 
             //builder.ApplyConfiguration(new ArticleMap()); 

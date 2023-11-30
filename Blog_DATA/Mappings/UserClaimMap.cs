@@ -20,4 +20,6 @@ namespace Blog_DATA.Mappings
             builder.ToTable("AspNetUserClaims");
         }
     }
+
+
 }

@@ -20,14 +20,14 @@ namespace Blog_WEB
             // Add services to the container.
             builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-            //Identity yapýlanmasý iin test aþamasýnan geçerken password kýsmýnda ilk etapta þifrelerin 123456 þeklinde olabilmesi için böyle bir yapýlandýrma yazdýk fakat Proje canlýya taþýndýðýnda bunun silinmesi gerekiyor
+            //Identity yapýlanmasý için test aþamasýnan geçerken password kýsmýnda ilk etapta þifrelerin 123456 þeklinde olabilmesi için böyle bir yapýlandýrma yazdýk fakat Proje canlýya taþýndýðýnda bunun silinmesi gerekiyor
             builder.Services.AddIdentity<AppUser, AppRole>(opt =>
             {
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequireLowercase = false;
                 opt.Password.RequireUppercase = false;
             })
-                .AddRoleManager<RoleManager<AppRole>>()
+                .AddRoleManager<RoleManager<AppRole>>()//Role tabanlý bir yapýlandýrma kuracaðým bunun olmasý önemli
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -45,7 +45,7 @@ namespace Blog_WEB
                 };
                 config.SlidingExpiration = true;
                 config.ExpireTimeSpan= TimeSpan.FromDays(7);//Cookie de ne kadar süre ile kalacaðýný göstr.
-                config.AccessDeniedPath = new PathString("/Admin/Auth/AccessDonied");//Yetkisiz bir giriþ yapýldýðýnýda bu sayfaya eriþimizniz yoktur þeklide bir sayfa ile karþýlaþýlmasýný söyler.
+                config.AccessDeniedPath = new PathString("/Admin/Auth/AccessDonied");//Yetkisiz bir giriþ yapýldýðýnýda bu sayfaya eriþiminiz yoktur þeklide bir sayfa ile karþýlaþýlmasýný söyler.
 
 
             });
@@ -63,14 +63,16 @@ namespace Blog_WEB
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+
             app.UseSession();//Cookie için bunu ekledik.
 
             app.UseRouting();
-           
+         
             //Authentication ve Authorization sýralamasý önemli bu þekilde olmalý.Yoksa hata almamýza sebep olacaktýr.
-            app.UseAuthentication();
 
+            app.UseAuthentication();        
             app.UseAuthorization();
+           
 
             //Burada program çalýþtýðýnda Controller olarak HomeController ve action olarak da Indexin çalýþacaðýný söylüyor. id si ise alýnadabilir alýnmayadabilir.
             //app.MapControllerRoute(
@@ -84,7 +86,7 @@ namespace Blog_WEB
                    areaName: "Admin",
                   pattern: "Admin/{controller=Home}/{action=Index}/{id?}"
                     );
-                endpoints.MapDefaultControllerRoute();//Verdiðim alaný Admin ilr çaðýracaðým fakat çaðýröazsam default olarak gelsin diye bunu da ekledim.
+                endpoints.MapDefaultControllerRoute();//Verdiðim alaný Admin ile çaðýracaðým fakat çaðýrmazsam default olarak gelsin diye bunu da ekledim.
             });
 
             app.Run();

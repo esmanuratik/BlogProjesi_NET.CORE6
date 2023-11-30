@@ -14,8 +14,8 @@ namespace Blog_SERVİCE.AutoMapper.Articles
 
         public ArticleProfile()
         {
-            CreateMap<ArticlesViiewModel,Article>().ReverseMap();
-            //ArticleViewModel istersem Article ile Map leme işlemi yap.ReverseMap ile de Article istersem ArticleViewModel ile işlem yap.Yani kısaca bunları birbirne map leme olayı vardır.Bunu da servicde program.cs de Assembly ile belirttiğim gibi belirtmeliyim.Yani program.cs de kalablaık olmasın temiz bir kod olsun diye ServiceLayerExtensions da.
+            CreateMap<ArticlesViewModel,Article>().ReverseMap();
+            //ArticleViewModel istersem Article ile Map leme işlemi yap.ReverseMap ile de Article istersem ArticleViewModel ile işlem yap.Yani kısaca bunları birbirne map leme olayı vardır.Bunu da servicede program.cs de Assembly ile belirttiğim gibi belirtmeliyim.Yani program.cs de kalabalık olmasın temiz bir kod olsun diye ServiceLayerExtensions da.
         }
     }
 }

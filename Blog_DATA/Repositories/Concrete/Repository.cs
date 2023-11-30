@@ -21,9 +21,7 @@ namespace Blog_DATA.Repositories.Concrete
         {
             this.dbContext = dbContext;
         }
-
         private DbSet<T> Table { get => dbContext.Set<T>(); }//bunu yapmasaydık her seferinde db contexde bunu yazmak zorunda kalırdık.
-
 
         //Bu kod, asenkron olarak çalışan bir metodu tanımlıyor. AddAsync adında bir metot, T tipindeki bir varlık (entity) nesnesini veritabanına eklemek amacıyla kullanılıyor.
         //Task: Metot, Task tipinde bir nesne döndüreceğini ifade eder. Bu, asenkron işlemin sonucunu temsil eden bir yapıdır.Task==void ile aynıdır async işlemlerle birlikte kulllanılır ve geri dönüş tipi yoktur.
@@ -56,7 +54,7 @@ namespace Blog_DATA.Repositories.Concrete
                 query = query.Where(predicate);
             if(includeProporties.Any())
                 foreach(var item in includeProporties)
-                    query=query.Include(item);//ınclude bool değer döndüren bir metot
+                    query=query.Include(item);//include bool değer döndüren bir metot
 
             return await query.ToListAsync();
         }

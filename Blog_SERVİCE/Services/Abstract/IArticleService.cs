@@ -10,6 +10,6 @@ namespace Blog_SERVİCE.Services.Abstract
 {
     public interface IArticleService
     {
-        Task<List<ArticlesViiewModel>> GetAllArticlesAsync();//async işlem yaptığım için task kullandık ve getallarticleasync metodu oluşturduk.
+        Task<List<ArticlesViewModel>> GetAllArticlesAsync();//async işlem yaptığım için task kullandık ve getallarticleasync metodu oluşturduk.
     }
 }

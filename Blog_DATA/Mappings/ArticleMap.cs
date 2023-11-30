@@ -13,7 +13,7 @@ namespace Blog_DATA.Mappings
     {
         public void Configure(EntityTypeBuilder<Article> builder) //bunu AppDbContext de override edeceğiz ikisi de database i etkiliyor onun için oraya yazdık.
         {
-            builder.Property(x=>x.Title).HasMaxLength(150);
+            builder.Property(x => x.Title).HasMaxLength(150);
 
             builder.HasData(new Article
             {
@@ -26,7 +26,7 @@ namespace Blog_DATA.Mappings
                 CreatedBy = "Admin Test",
                 CreatedDate = DateTime.Now,
                 IsDeleted = false,
-                UserId = Guid.Parse("CE819932-AA76-4DFD-BC26-D450CC43644D")
+                UserId = Guid.Parse("CE819932-AA76-4DFD-BC26-D450CC43644D"),
 
             },
             new Article
@@ -40,12 +40,14 @@ namespace Blog_DATA.Mappings
                 CreatedBy = "Visual Studio Admin Test",
                 CreatedDate = DateTime.Now,
                 IsDeleted = false,
-                UserId = Guid.Parse("89840E40-5233-4268-A713-01833FBAAEF7")
+                UserId = Guid.Parse("89840E40-5233-4268-A713-01833FBAAEF7"),
 
             }
 
 
-            ) ;
+            );
         }
     }
+
+
 }
